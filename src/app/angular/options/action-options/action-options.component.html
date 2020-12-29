@@ -1,0 +1,17 @@
+<div class="my-2">
+  <h3 class="text-center">{{ option.name }}</h3>
+  <form class="game-options">
+    <div
+      class="form-group btn-group btn-group-toggle d-block m-0"
+      data-toggle="buttons"
+    >
+      <div *ngFor="let action of option.actions">
+        <app-option [action]="action"></app-option>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success btn-lg" (click)="action('food')">
+      Select
+    </button>
+    <span>Last Action: {{ catData.lastAction }}</span>
+  </form>
+</div>

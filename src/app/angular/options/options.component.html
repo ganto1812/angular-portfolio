@@ -1,0 +1,11 @@
+<div>
+  <h2 class="m-5">Options</h2>
+  <div class="row mx-auto justify-content-around">
+    <div *ngFor="let option of options">
+      <app-action-options
+        [option]="option"
+        [catData]="catData"
+      ></app-action-options>
+    </div>
+  </div>
+</div>
