@@ -1,9 +1,15 @@
 <div class="p-2 m-2 text-center">
   <h2>{{ icon }}</h2>
-  <h2>{{ name }}</h2>
+  <h2 class="d-inline-block">{{ name }}</h2>
+  <small class="text-success">{{ change ? change>0? ' 🔺 '+change : ' 🔻 '+change: "" }}</small>
   <div class="progress">
     <div
-      class="progress-bar bg-success"
+      class="progress-bar"
+      [ngClass]="{
+        'bg-success': value >= 50,
+        'bg-warning': value < 50,
+        'bg-danger': value < 16
+      }"
       role="progressbar"
       aria-valuemin="0"
       aria-valuemax="100"

@@ -1,37 +1,33 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: "app-options",
-  templateUrl: "./options.component.html",
-  styleUrls: ["./options.component.css"]
+  selector: 'app-options',
+  templateUrl: './options.component.html',
+  styleUrls: ['./options.component.css'],
 })
-export class OptionsComponent implements OnInit {
+export class OptionsComponent {
   @Input() catData;
 
-  @Input() options = [
+  options = [
     {
-      name: "Hunger",
-      actions: ["Milk", "Fish", "Sardines"]
+      name: 'Food',
+      actions: ['Milk', 'Fish', 'Sardines'],
     },
     {
-      name: "Health",
-      actions: ["Doctor", "Massage", "Pray"]
+      name: 'Health',
+      actions: ['Doctor', 'Massage'],
     },
     {
-      name: "PlayTime",
-      actions: ["Fetch", "Laser", "Chase", "Wand"]
+      name: 'Play',
+      actions: ['Fetch', 'Laser', 'Chase', 'Wand'],
     },
     {
-      name: "Clean",
-      actions: ["Shower", "Brush"]
+      name: 'Clean',
+      actions: ['Shower', 'Brush'],
     },
     {
-      name: "Sleep",
-      actions: ["Nap", "Full"]
-    }
+      name: 'Sleep',
+      actions: ['Nap', 'Full'],
+    },
   ];
-
-  constructor() {}
-
-  ngOnInit() {}
 }

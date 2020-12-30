@@ -9,6 +9,7 @@ export class StatComponent implements OnInit {
   @Input() name;
   @Input() value;
   @Input() icon;
+  @Input() change;
   constructor() {}
 
   ngOnInit() {}

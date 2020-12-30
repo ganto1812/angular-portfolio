@@ -1,38 +1,38 @@
 ﻿<h2 class="m-5">Stats</h2>
 <div class="row mx-auto justify-content-around">
   <app-stat
-    icon="❤"
-    name="Hunger"
-    [value]="catData.hunger"
+    [icon]="'❤'"
+    [change]="service.foodChange"
+    name="Food"
+    [value]="catData.food"
     class="col-sm"
-    (click)="action('food')"
   ></app-stat>
   <app-stat
-    icon="🍽"
+    [icon]="'🍽'"
+    [change]="service.healthChange"
     name="Health"
     [value]="catData.health"
-    class="col-sm"
-    (click)="action('health')"
+    [class]="'col-sm'"
   ></app-stat>
   <app-stat
-    icon="🕹"
-    name="PlayTime"
-    [value]="catData.playTime"
-    class="col-sm"
-    (click)="action('play')"
+    [icon]="'🕹'"
+    [change]="service.playChange"
+    name="Play"
+    [value]="catData.play"
+    [class]="'col-sm'"
   ></app-stat>
   <app-stat
-    icon="🚿"
+    [icon]="'🚿'"
+    [change]="service.cleanChange"
     name="Clean"
     [value]="catData.clean"
-    class="col-sm"
-    (click)="action('shower')"
+    [class]="'col-sm'"
   ></app-stat>
   <app-stat
-    icon="💤"
+    [icon]="'💤'"
+    [change]="service.sleepChange"
     name="Sleep"
     [value]="catData.sleep"
-    class="col-sm"
-    (click)="action('sleep')"
+    [class]="'col-sm'"
   ></app-stat>
 </div>

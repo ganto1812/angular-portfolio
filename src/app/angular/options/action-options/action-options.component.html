@@ -5,13 +5,12 @@
       class="form-group btn-group btn-group-toggle d-block m-0"
       data-toggle="buttons"
     >
-      <div *ngFor="let action of option.actions">
-        <app-option [action]="action"></app-option>
+      <div *ngFor="let action of option.actions; index as i">
+        <app-option [action]="action" (onChoose)="actionId = i"></app-option>
       </div>
     </div>
-    <button type="submit" class="btn btn-success btn-lg" (click)="action('food')">
+    <button type="submit" class="btn btn-success btn-lg" (click)="action(option.name, actionId)">
       Select
     </button>
-    <span>Last Action: {{ catData.lastAction }}</span>
   </form>
 </div>
