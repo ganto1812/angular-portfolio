@@ -1,36 +1,46 @@
-.card-list {
+.cards-list {
   display: flex;
-  overflow-x: scroll;
+  overflow: hidden;
+  transform: translateY(7rem);
+  transition-duration: 1s;
+  height: 38em;
+  width: fit-content;
+  padding: 3em 8em;
+}
+.cards-list:hover {
+  transform: translateY(3rem);
+  transition-duration: 1s;
+}
+.cards-list:hover #card0 {
+  transform: rotate(-35deg) translateX(-5rem) translateY(5rem);
+  transition-duration: 1s;
+}
+.cards-list:hover #card1 {
+  transform: translateY(0);
+  transition-duration: 1s;
+}
+.cards-list:hover #card2 {
+  transform: rotate(35deg) translateX(5rem) translateY(5rem);
+  transition-duration: 1s;
 }
 
 .card {
   display: flex;
   position: relative;
   flex-direction: column;
-  height: 410px;
-  width: 400px;
+  height: 300px;
+  width: 285px;
   min-width: 250px;
   padding: 1.5rem;
+  /* margin: 4em; */
 
   border-radius: 16px;
   background: #005267;
   box-shadow: -1rem 0 3rem #000;
 
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.card:hover {
-  transform: translateY(-3rem);
-}
-
-.card:hover~.card {
-  transform: translateX(220px) translateY(6rem) rotate(20deg);
-}
-
-.card:not(:first-child) {
-  margin-left: -160px;
-}
-
-.min-height-42 {
-  min-height: 42em;
+.h-84 {
+  height: 84vh;
 }

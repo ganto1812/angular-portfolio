@@ -1,21 +1,25 @@
-<div class="p-5">
+<div class="px-5 py-2">
   <h1>React Projects</h1>
   <p>2019</p>
 </div>
-<div class="min-height-42 col-md-8 mx-auto">
-    <section class="cards-list d-flex p-5">
-      <article *ngFor="let project of projects" class="card">
-        <a [href]="project.link">
-          <img
-            [src]="'../../assets/images/react/' + project.src"
-            class="img-fluid mx-auto"
-            [alt]="project.name"
-          />
-        </a>
-        <p>
-          <em>{{ project.name }}</em>
-        </p>
-      </article>
-    </section>
-  </div>
-  
+<div class="mx-auto h-84">
+  <a
+    class="cards-list d-flex mx-auto"
+    href="https://old-react-projects.netlify.app"
+  >
+    <article
+      *ngFor="let project of projects; index as i"
+      class="card"
+      [id]="'card' + i"
+    >
+      <img
+        [src]="'../../assets/images/react/' + project.src"
+        class="img-fluid mx-auto"
+        [alt]="project.name"
+      />
+      <p>
+        <em>{{ project.name }}</em>
+      </p>
+    </article>
+  </a>
+</div>
