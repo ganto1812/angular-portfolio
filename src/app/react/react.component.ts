@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ReactComponent {
   projects = [
-    {name: "Weather App", src: "weather.png", link:"https://old-react-projects.netlify.app/projects/1"},
-    {name: "Retail Phone Store", src: "retail.png", link:"https://old-react-projects.netlify.app/projects/2"},
-    {name: "To Do List", src: "todo.png", link:"https://old-react-projects.netlify.app/projects/3"},
+    {name: "Weather App", src: "weather.png", link:"https://old-react-projects.netlify.app/project/1"},
+    {name: "Retail Phone Store", src: "retail.png", link:"https://old-react-projects.netlify.app/project/2"},
+    {name: "To Do List", src: "todo.png", link:"https://old-react-projects.netlify.app/project/3"},
   ]
 }
