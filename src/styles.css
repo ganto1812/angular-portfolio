@@ -5,13 +5,14 @@ body {
 }
 
 .navbar {
-  background-color: #0490b3;
+  background-color: #005368;
   -webkit-box-shadow: 0 1px 6px 0 #575757;
           box-shadow: 0 1px 6px 0 #575757;
 }
 
 .navbar a:hover {
-  background-color: #005368;
+  background-color: #002d38;
+  color: #fff !important;
 }
 
 .navbar .active {

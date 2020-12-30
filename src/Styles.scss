@@ -1,7 +1,7 @@
-$primary: #0490b3;
-$hover: #005368;
+$primary: #005368;
+$hover: #002d38;
 $navbar_active: #7e1946;
-$text: #ececec;
+$text: rgb(255, 255, 255);
 $background: #111111;
 
 body {
@@ -17,6 +17,7 @@ body {
 
   a:hover {
     background-color: $hover;
+    color: #fff !important;
   }
   .active {
     background-color: $navbar_active;
