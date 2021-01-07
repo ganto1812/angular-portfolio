@@ -28,6 +28,19 @@
   background: linear-gradient(90deg, #0d1110, #0d1110 1px, #141d1b 0, #141d1b);
 }
 
+.right-0 {
+  right: 0;
+}
+.top-40 {
+  top: 40px;
+}
+#icon {
+  filter: opacity(20%);
+}
+#icon:hover {
+  filter: opacity(100%);
+}
+
 @media only screen and (min-width: 800px) {
   .section-bg {
     left: -3em;
