@@ -1,0 +1,70 @@
+<div class="pt-5 text-center">
+  <h1>Find me a playlist 🎶</h1>
+  <div *ngIf="!loaded"></div>
+  <div *ngIf="loaded" [ngSwitch]="page">
+    <div *ngSwitchDefault>
+      <p class="my-5">Follow the steps to find your new music playlist.</p>
+      <button class="btn btn-outline-info col-3" (click)="page = 'options'">
+        START
+      </button>
+    </div>
+    <div *ngSwitchCase="'options'">
+      <div class="text-center">
+        <p class="my-5">
+          We will search for a playlist based on the images you select today.
+        </p>
+        <h2 class="mb-5">
+          {{
+            selectedImagesWords.length > 0
+              ? "And again..."
+              : "Select one of these:"
+          }}
+        </h2>
+        <a *ngFor="let option of images" (click)="choosePhoto(option)"
+          ><img
+            [src]="option.urls.thumb"
+            [alt]="option.description ? option.description : 'Random picture'"
+            [title]="option.description ? option.description : ''"
+            height="350"
+        /></a>
+      </div>
+    </div>
+    <div *ngSwitchCase="'playlist'">
+      <div class="text-center">
+        <p class="my-5">Let's make the playlist.</p>
+        <p class="my-5">
+          BTW This will create an actual playlist on your account.
+        </p>
+        <p class="my-5">So choose a name wisely.</p>
+        <h2 class="mb-3">Name:</h2>
+        <input type="text" name="playlistName" [(ngModel)]="playlistName" />
+        <button
+          class="mt-5 d-block mx-auto btn btn-outline-info col-3"
+          (click)="createPlaylist(playlistName)"
+          [disabled]="playlistName === ''"
+        >
+          Create
+        </button>
+        <p
+          *ngIf="playlistName === 'Wisely' || playlistName === 'wisely'"
+          class="mt-3"
+        >
+          Haha very funny 😒
+        </p>
+      </div>
+    </div>
+    <div *ngSwitchCase="'result'">
+      <h2 class="my-5">All set!</h2>
+      <h3>This is YOUR playlist created from YOUR choices.</h3>
+      <p class="my-5">You can find it inside your app too.</p>
+      <iframe
+        [src]="playlist_url"
+        width="100%"
+        height="380"
+        frameBorder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
+    </div>
+  </div>
+</div>

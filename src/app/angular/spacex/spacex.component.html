@@ -1,0 +1,49 @@
+<ng-container *ngIf="pastLaunches$ | async as pastLaunches">
+  <main>
+    <div class="text-center">
+      <img src="./assets/images/angular/spacex.png" width="500" alt="logo" />
+      <small class="text-white d-block"
+        >This project uses RXJS, Graphql, CodeGen, Apollo and the SpaceX API.
+        Click on any of the images for details on the launch.</small
+      >
+    </div>
+    <section class="d-flex flex-wrap justify-content-center">
+      <a
+        *ngFor="let launch of pastLaunches; let last = last"
+        [routerLink]="[launch.id]"
+        class="card d-grid bg-secondary m-3"
+        style="width: 250px"
+      >
+        <div class="card-body">
+          <div class="card-title text-white">
+            <img
+              *ngIf="launch.links.mission_patch_small"
+              height="40"
+              width="40"
+              mat-card-avatar
+              loading="lazy"
+              [src]="launch.links.mission_patch_small"
+              alt="Mission patch of {{ launch.mission_name }}"
+            />
+            {{ launch.rocket.rocket_name }}
+          </div>
+          <small class="card-subtitle text-dark">{{
+            launch.mission_name
+          }}</small>
+        </div>
+        <img
+          *ngIf="launch.links.flickr_images[0]"
+          class="justify-self-center card-img-bottom"
+          height="200"
+          width="200"
+          loading="lazy"
+          [src]="launch.links.flickr_images[0]"
+          alt="Photo of {{ launch.mission_name }}"
+        />
+        <b class="text-white text-center"
+          >launched {{ launch.launch_date_utc | relativeTime }}</b
+        >
+      </a>
+    </section>
+  </main>
+</ng-container>

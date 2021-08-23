@@ -1,0 +1,61 @@
+<ng-container *ngIf="launchDetails$ | async as launchDetails">
+  <div class="container my-5">
+    <section class="px-4">
+        <h1>{{ launchDetails.mission_name }}</h1>
+        <div class="d-flex">
+          <img
+            *ngIf="launchDetails.links.mission_patch"
+            height="40"
+            width="40"
+            [src]="launchDetails.links.mission_patch"
+            alt="Mission patch of {{ launchDetails.mission_name }}"
+            class="mx-3"
+          />
+          <p>{{ launchDetails.details }}</p>
+        </div>
+    </section>
+    <section class="photo-grid">
+      <div
+        id="carouselControls"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div
+            *ngFor="
+              let pic of launchDetails.links.flickr_images;
+              let first = first
+            "
+            [ngClass]="'carousel-item' + (first ? ' active' : '')"
+          >
+            <img
+              [src]="pic"
+              class="d-block mx-auto"
+              alt="Picture of {{ launchDetails.mission_name }}"
+              height="700"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselControls"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselControls"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</ng-container>

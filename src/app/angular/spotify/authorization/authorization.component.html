@@ -1,0 +1,21 @@
+<div class="pt-5 text-center">
+  <h1>Find me a playlist 🎶</h1>
+  <p class="my-5">This app builds a playlist based on a selection of pictures.</p>
+  <p class="my-5">Let's login into your Spotify account first.</p>
+  <a
+    class="btn border border-light rounded"
+    [href]="
+      'https://accounts.spotify.com/authorize?client_id=' +
+      client_Id +
+      '&response_type=token&redirect_uri=' +
+      redirect_url +
+      '&scope=playlist-modify-private'
+    "
+  >
+    <img
+      src="../../../../assets/images/angular/spotify_white.png"
+      height="100"
+      alt="Spotify logo"
+    />
+  </a>
+</div>

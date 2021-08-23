@@ -1,45 +1,70 @@
-<div
-  *ngIf="!catDataService.endedGame; else endGame"
-  class="text-center mx-auto"
->
-  <div class="pt-1 px-5">
-    <h1>Chunky</h1>
-    <p>This is chunky cat</p>
-  </div>
-  <img
-    src="../../assets/images/angular/chunky.jpg"
-    class="img-fluid d-flex mx-auto"
-    alt="Chunky"
-  />
-  <div class="mx-auto d-block">
-    <app-stats [catData]="catDataService.catData"  [service]="catDataService"></app-stats>
-    <app-options [catData]="catDataService.catData"></app-options>
-  </div>
-  <div class="p-5 mt-5 text-center">
-    <p>Take care of your cat by choosing any of the options above.</p>
-    <p>Be careful not to reach 0 on any stat or I'll be taking him back.</p>
-    <p>Chunky saves on your session so you can leave and come back to where you were.</p>
-    <h1>Have fun! 😸</h1>
-  </div>
-</div>
-<ng-template #endGame>
-  <div class="text-center mx-auto">
-    <h1>Oops!</h1>
-    <h2 class="mb-5">GAME OVER</h2>
-    <img
-      src="../../assets/images/angular/cat-taken.jpeg"
-      class="img-fluid d-flex mx-auto"
-      alt="Bye Chunky"
-    />
-    <div>
-      <p class="text-center">Chunky has been taken away.</p>
-      <p class="text-center">He's lost some weight so it's not all bad.</p>
-      <p class="text-center mb-4">Want to try again?</p>
-      <button class="bg-danger btn btn-lg mb-5" (click)="catDataService.resetGame()">
-        Reset
-      </button>
+<div class="px-5 py-2">
+  <h1>Angular Projects</h1>
+  <p>2020 / 2021</p>
+  <div class="d-flex justify-content-center flex-wrap">
+    <div class="flip-card m-5">
+      <a routerLink="chunky">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              src="../../assets/images/angular/chunky-project.png"
+              width="500"
+              alt=""
+            />
+          </div>
+          <div
+            class="flip-card-back"
+            [ngStyle]="{ 'background-color': randomColor }"
+            (mouseleave)="getRandomColor()"
+          >
+            <h1>😹Chunky😻</h1>
+            <p class="h5 p-2">
+              You are taking care of Chunky for a couple of days while the owner
+              is away. Make sure none of his stats reach zero.
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="flip-card m-5">
+      <a routerLink="spotify">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="../../assets/images/angular/spotify.png" alt="" />
+          </div>
+          <div
+            class="flip-card-back"
+            [ngStyle]="{ 'background-color': randomColor }"
+            (mouseleave)="getRandomColor()"
+          >
+            <h1>🎵Album Playlist🖼</h1>
+            <p class="h5 p-2">
+              Want to listen to some images? Generate a playlist on Spotify
+              based on a selection of pictures.
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="flip-card m-5">
+      <a routerLink="spacex">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="../../assets/images/angular/spacex-project.png" alt="" />
+          </div>
+          <div
+            class="flip-card-back"
+            [ngStyle]="{ 'background-color': randomColor }"
+            (mouseleave)="getRandomColor()"
+          >
+            <h1>🚀Space X Rockets👩‍🚀</h1>
+            <p class="h5 p-2">
+              Check the latest rocket launches from SpaceX. Live info and data
+              on each rocket!
+            </p>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
-</ng-template>
-
-<app-footer></app-footer>
+</div>
