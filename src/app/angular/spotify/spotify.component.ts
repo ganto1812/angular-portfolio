@@ -33,8 +33,6 @@ export class SpotifyComponent implements OnInit {
   client_Id = '0346a39ad40a405395f08edf3b1c5def';
   user_id = '';
   playlist_id = '';
-  redirect_url = 'https://ana-portfolio-2021.netlify.app/angular/spotify';
-  // redirect_url = 'http://localhost:4200/angular';
   playlist_url: any;
 
   constructor(
