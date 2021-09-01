@@ -1,6 +1,15 @@
 <div class="pt-5 text-center">
   <h1>Find me a playlist 🎶</h1>
-  <div *ngIf="!loaded"></div>
+  <div *ngIf="!loaded" class="mt-5">
+    <button class="btn btn-info mt-5" type="button" disabled>
+      <span
+        class="spinner-grow spinner-grow-sm"
+        role="status"
+        aria-hidden="true"
+      ></span>
+      Loading...
+    </button>
+  </div>
   <div *ngIf="loaded" [ngSwitch]="page">
     <div *ngSwitchDefault>
       <p class="my-5">Follow the steps to find your new music playlist.</p>

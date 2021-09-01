@@ -22,7 +22,7 @@ const httpOptions = {
   styleUrls: ['./spotify.component.css'],
 })
 export class SpotifyComponent implements OnInit {
-  loaded = true;
+  loaded = false;
   playlistName = '';
   images: any = [];
   selectedImagesWords = [];
@@ -77,14 +77,17 @@ export class SpotifyComponent implements OnInit {
     if (this.selectedImagesWords.length < 4) {
       this.loaded = false;
       this.addOptionToSelected(option);
+
       // this.getRandomPhotos();
       // from(this.getRandomPhotos).pipe(
       //   map((res) => res.response),
       //   take(1)
       // ).subscribe(res => this.images$ = res.);
       this.getRandomPhotos().then((res) => {
-        this.images = res.response;
-        this.loaded = true;
+        setTimeout(() => {          
+          this.images = res.response;
+          this.loaded = true;
+        }, 500);
       });
     } else {
       this.addOptionToSelected(option);
