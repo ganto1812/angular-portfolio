@@ -140,7 +140,6 @@ export class SpotifyComponent implements OnInit {
       .subscribe(
         (res) => {
           this.playlist_id = res['id'];
-          console.log('this.songsUris :>> ', this.songsUris);
           this.http
             .post(
               `${this.spotify_url}/playlists/${this.playlist_id}/tracks?uris=${this.songsUris}`,
