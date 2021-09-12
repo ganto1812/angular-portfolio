@@ -1,118 +1,120 @@
-<div class="container">
-  <header class="section header mb-5" id="home">
-    <!-- Notice -->
-    <div
-      class="
-        border
-        col-md-2
-        position-absolute
-        right-0
-        top-40
-        text-center
-        d-none d-md-block
-      "
-    >
-      <small
-        >This portfolio is built on angular while the rest of the projects are
-        built on Vanilla JS and React. To be able to come back to this homepage
-        click on the logo</small
+<div class="spacer layer1">
+  <div class="container">
+    <header class="section header mb-5" id="home">
+      <!-- Notice -->
+      <div
+        class="
+          border
+          col-md-2
+          position-absolute
+          right-0
+          top-40
+          text-center
+          d-none d-md-block
+        "
       >
-      <a href="#" class="d-block"
-        ><img
-          src="../../assets/images/home/name.svg"
-          height="50"
-          width="50"
-          id="icon"
-        />
-      </a>
+        <small
+          >This portfolio is built on angular while the rest of the projects are
+          built on Vanilla JS and React. To be able to come back to this
+          homepage click on the logo</small
+        >
+        <a href="#" class="d-block"
+          ><img
+            src="../../assets/images/home/name.svg"
+            height="50"
+            width="50"
+            id="icon"
+          />
+        </a>
+      </div>
+      <!-- Big Ana Pisani and Logo -->
+      <div class="d-flex flex-column">
+        <div class="d-flex mx-auto w-35">
+          <img
+            src="../../assets/images/home/name.svg"
+            alt="Ana Pisani"
+            class="header-img img-fluid mt-5 mr-n5"
+          />
+          <img
+            src="../../assets/images/home/avatar.svg"
+            alt="Picture of myself"
+            title="Ana Pisani"
+            class="header-img img-fluid mt-5"
+          />
+        </div>
+        <div class="d-flex flex-column text-center py-5">
+          <p>
+            I'm a self-taught Front End Developer, currently working to become a
+            Full Stack Developer.
+          </p>
+          <p>I made a few projects at the top.</p>
+          <p>Each section was built using a different framework.</p>
+        </div>
+      </div>
+    </header>
+    <!--intro -->
+    <div class="row my-5 py-5">
+      <div class="col-md-6 py-5 text-center">
+        <div class="section-bg p-3 mb-2">
+          <h2>Languages:</h2>
+          <p>Html 5, Css 3, JavaScript 5 and C#.</p>
+        </div>
+        <div class="smallIcons mx-auto col-md-8 mb-5">
+          <img
+            *ngFor="let lang of home.langs"
+            [src]="'../../assets/images/home/' + lang"
+            [alt]="lang"
+            class="mx-auto img-fluid p-2 col-4 col-md-2"
+            [title]="lang"
+          />
+        </div>
+      </div>
+      <div class="col-md-6 py-5 text-center">
+        <div class="section-bg p-3 mb-2">
+          <h2>Libraries &amp; Frameworks:</h2>
+          <p>Jquery, React, Angular, Bootstrap and Sass.</p>
+        </div>
+        <div class="smallIcons mx-auto col-md-8 mb-5">
+          <img
+            *ngFor="let lib of home.libs"
+            [src]="'../../assets/images/home/' + lib"
+            [alt]="lib"
+            class="mx-auto img-fluid p-2 col-4 col-md-2"
+            [title]="lib"
+          />
+        </div>
+      </div>
+      <div class="col-md-6 py-5 text-center">
+        <div class="section-bg p-3 mb-2">
+          <h2>Designing software:</h2>
+          <p>Photoshop, Illustrator, XD, Gimp and Inkscape.</p>
+        </div>
+        <div class="smallIcons mx-auto col-md-8 mb-5">
+          <img
+            *ngFor="let design of home.designs"
+            [src]="'../../assets/images/home/' + design"
+            [alt]="design"
+            class="mx-auto img-fluid p-2 col-4 col-md-2"
+            [title]="design"
+          />
+        </div>
+      </div>
+      <div class="col-md-6 py-5 text-center">
+        <div class="section-bg p-3 mb-2">
+          <h2>Others:</h2>
+          <p>Github, Bitbucket, Slack, Axosoft, IceScrum and Figma.</p>
+        </div>
+        <div class="smallIcons mx-auto row col-md-6 mb-5">
+          <img
+            *ngFor="let other of home.others"
+            class="col-md-6"
+            [src]="'../../assets/images/home/' + other"
+            [alt]="other"
+            [title]="other"
+          />
+        </div>
+      </div>
     </div>
-    <!-- Big Ana Pisani and Logo -->
-    <div class="d-flex flex-column">
-      <div class="d-flex mx-auto w-35">
-        <img
-          src="../../assets/images/home/name.svg"
-          alt="Ana Pisani"
-          class="header-img img-fluid mt-5 mr-n5"
-        />
-        <img
-          src="../../assets/images/home/avatar.svg"
-          alt="Picture of myself"
-          title="Ana Pisani"
-          class="header-img img-fluid mt-5"
-        />
-      </div>
-      <div class="d-flex flex-column text-center py-5">
-        <p>
-          I'm a self-taught Front End Developer, currently working to become a
-          Full Stack Developer.
-        </p>
-        <p>I made a few projects at the top.</p>
-        <p>Each section was built using a different framework.</p>
-      </div>
-    </div>
-  </header>
-  <!--intro -->
-  <div class="row my-5 py-5">
-    <div class="col-md-6 py-5 text-center">
-      <div class="section-bg p-3 mb-2">
-        <h2>Languages:</h2>
-        <p>Html 5, Css 3, JavaScript 5 and C#.</p>
-      </div>
-      <div class="smallIcons mx-auto col-md-8 mb-5">
-        <img
-          *ngFor="let lang of home.langs"
-          [src]="'../../assets/images/home/' + lang"
-          [alt]="lang"
-          class="mx-auto img-fluid p-2 col-4 col-md-2"
-          [title]="lang"
-        />
-      </div>
-    </div>
-    <div class="col-md-6 py-5 text-center">
-      <div class="section-bg p-3 mb-2">
-        <h2>Libraries &amp; Frameworks:</h2>
-        <p>Jquery, React, Angular, Bootstrap and Sass.</p>
-      </div>
-      <div class="smallIcons mx-auto col-md-8 mb-5">
-        <img
-          *ngFor="let lib of home.libs"
-          [src]="'../../assets/images/home/' + lib"
-          [alt]="lib"
-          class="mx-auto img-fluid p-2 col-4 col-md-2"
-          [title]="lib"
-        />
-      </div>
-    </div>
-    <div class="col-md-6 py-5 text-center">
-      <div class="section-bg p-3 mb-2">
-        <h2>Designing software:</h2>
-        <p>Photoshop, Illustrator, XD, Gimp and Inkscape.</p>
-      </div>
-      <div class="smallIcons mx-auto col-md-8 mb-5">
-        <img
-          *ngFor="let design of home.designs"
-          [src]="'../../assets/images/home/' + design"
-          [alt]="design"
-          class="mx-auto img-fluid p-2 col-4 col-md-2"
-          [title]="design"
-        />
-      </div>
-    </div>
-    <div class="col-md-6 py-5 text-center">
-      <div class="section-bg p-3 mb-2">
-        <h2>Others:</h2>
-        <p>Github, Bitbucket, Slack, Axosoft, IceScrum and Figma.</p>
-      </div>
-      <div class="smallIcons mx-auto row col-md-6 mb-5">
-        <img
-          *ngFor="let other of home.others"
-          class="col-md-6"
-          [src]="'../../assets/images/home/' + other"
-          [alt]="other"
-          [title]="other"
-        />
-      </div>
-    </div>
+    <app-footer></app-footer>
   </div>
-  <app-footer></app-footer>
 </div>
