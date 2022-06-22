@@ -84,7 +84,7 @@ export class SpotifyComponent implements OnInit {
       //   take(1)
       // ).subscribe(res => this.images$ = res.);
       this.getRandomPhotos().then((res) => {
-        setTimeout(() => {          
+        setTimeout(() => {
           this.images = res.response;
           this.loaded = true;
         }, 500);
@@ -98,8 +98,18 @@ export class SpotifyComponent implements OnInit {
   addOptionToSelected(option) {
     this.selectedImagesWords.push(
       option.alt_description
-        .split(' ')
-        .filter((w) => w !== 'and' && w !== 'in' && w !== 'a' && w !== 'the')[0]
+        ? option.alt_description
+            .split(' ')
+            .filter(
+              (w) => w !== 'and' && w !== 'in' && w !== 'a' && w !== 'the'
+            )[0]
+        : option.location.name
+        ? option.location.name
+            .split(' ')
+            .filter(
+              (w) => w !== 'and' && w !== 'in' && w !== 'a' && w !== 'the'
+            )[0]
+        : 'null'
     );
   }
 
