@@ -36,9 +36,7 @@
 }
 #icon:hover {
   transition: 0.5s;
-  box-shadow: 0 0 50px #ccc;
-  width: 55px;
-  height: 55px;
+  box-shadow: 0 0 20px #ccc;
 }
 .spacer {
   aspect-ratio: 900/600;
